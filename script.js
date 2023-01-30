@@ -26,22 +26,22 @@ function start(){
     let road = gameScreen.getBoundingClientRect();
     console.log(road)
 
-    carRect = car.getBoundingClientRect();
+    let carRect = car.getBoundingClientRect();
     console.log(carRect)
     //move the car
 
     console.log(player.x, player.y, player.speed)
 
-    if(controls.ArrowUp && player.y > road.top){
+    if(controls.ArrowUp && player.y > road.top - 472){
         player.y -= player.speed;
     }
-    if(controls.ArrowDown && player.y < road.bottom-(carRect.height + carRect.height/2) ){
+    if(controls.ArrowDown && player.y < road.bottom - (carRect.height + carRect.height/2) ){
         player.y += player.speed;
     }
-    if(controls.ArrowLeft && player.x > road.left + (carRect.left + carRect.left/2)){
+    if(controls.ArrowLeft && player.x > 0){
         player.x -= player.speed;
     }
-    if(controls.ArrowRight  && player.x < road.right - (carRect.right + carRect.right/2)){
+    if(controls.ArrowRight  && player.x < road.width - 54){
         player.x += player.speed;
     }
     
